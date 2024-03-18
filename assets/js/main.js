@@ -1,26 +1,18 @@
-/*=============== SHOW HIDDEN - PASSWORD ===============*/
-const showHiddenPass = (loginPass, loginEye) =>{
-   const input = document.getElementById(loginPass),
-         iconEye = document.getElementById(loginEye)
-
-   iconEye.addEventListener('click', () =>{
-      // Change password to text
-      if(input.type === 'ade@gmail.com'){
-         // Switch to text
-         input.type = 'text'
-
-         // Icon change
-         iconEye.classList.add('ri-eye-line')
-         iconEye.classList.remove('ri-eye-off-line')
-      } else{
-         // Change to password
-         input.type = '123'
-
-         // Icon change
-         iconEye.classList.remove('ri-eye-line')
-         iconEye.classList.add('ri-eye-off-line')
-      }
-   })
-}
-
-showHiddenPass('login-pass','login-eye')
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    
+    // Verifikasi kredensial admin
+    if (username === 'admin' && password === 'admin') {
+        window.location.href = 'admin.html';
+    }
+    // Verifikasi kredensial user biasa
+    else if (username === 'user' && password === 'user') {
+        window.location.href = 'user.html';
+    }
+    // Tampilkan pesan kesalahan jika kredensial tidak valid
+    else {
+        alert('Invalid username or password. Please try again.');
+    }
+});
