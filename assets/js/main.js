@@ -4,11 +4,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var password = document.getElementById('password').value;
     
     // Verifikasi kredensial admin
-    if (username === 'admin' && password === 'admin') {
+    if (username === 'admin@gmail.com' && password === 'admin') {
         window.location.href = 'admin.html';
     }
     // Verifikasi kredensial user biasa
-    else if (username === 'user' && password === 'user') {
+    else if (username === 'user@gmail.com' && password === 'user') {
         window.location.href = 'user.html';
     }
     // Tampilkan pesan kesalahan jika kredensial tidak valid
